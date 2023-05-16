@@ -1,0 +1,193 @@
+.loginsignup-form-child {
+  position: absolute;
+  top: 81px;
+  left: 0;
+  width: 1728px;
+  height: 1036px;
+  object-fit: cover;
+}
+.group-child,
+.x {
+  position: absolute;
+}
+
+.group-child {
+  top: 0;
+  left: 0;
+  width: 69px;
+  height: 69px;
+}
+.x {
+  top: 18.82px;
+  left: 26.88px;
+  font-size: 25.09px;
+  font-weight: 500;
+  font-family: var(--font-plus-jakarta-sans);
+  color: mediumslateblue;
+  text-align: left;
+}
+.ellipse-parent {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 5px;
+  left: 830px;
+  width: 69px;
+  height: 69px;
+}
+.group-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(30px);
+  width: 927px;
+  height: 779px;
+}
+.login-below {
+  position: absolute;
+  top: 0;
+  left: 194px;
+  font-size: 40px;
+  line-height: 140%;
+  font-weight: 800;
+  font-family: var(--font-lato);
+  color: #141312;
+  text-align: left;
+}
+.group-inner {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-mediumslateblue);
+  position: absolute;
+  top: 337px;
+  left: 7px;
+  border-radius: 14px;
+  width: 664px;
+  height: 77px;
+}
+.login,
+.new-user,
+.or,
+.register-here {
+  position: absolute;
+  font-size: var(--font-size-11xl);
+  line-height: 140%;
+  font-family: var(--font-lato);
+  text-align: left;
+}
+.login {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 354px;
+  left: 303px;
+  color: #fff;
+  display: inline-block;
+}
+.new-user,
+.or,
+.register-here {
+  top: 0;
+}
+.or {
+  left: 148px;
+  color: var(--color-black);
+}
+.new-user,
+.register-here {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  display: inline-block;
+}
+.register-here {
+  left: 155px;
+  font-weight: 500;
+  color:mediumslateblue;
+}
+.new-user {
+  left: 0;
+  color: black;
+}
+.or-parent,
+.rectangle-input,
+.register-here-parent {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 335px;
+  height: 42px;
+}
+.or-parent,
+.rectangle-input {
+  top: 438px;
+  left: 172px;
+  height: 102px;
+}
+.rectangle-input {
+  border: 1px solid black;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  box-sizing: border-box;
+  width: 664px;
+  height: 77px;
+}
+.email-username {
+  position: absolute;
+  top: 21px;
+  left: 22px;
+  font-size: var(--font-size-5xl);
+  line-height: 140%;
+  font-weight: 300;
+  font-family: var(--font-lato);
+  color: var(--color-black);
+  text-align: left;
+}
+.group-parent,
+.rectangle-container,
+.rectangle-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 664px;
+  height: 77px;
+}
+.group-parent,
+.rectangle-container {
+  top: 106px;
+}
+.group-parent {
+  top: 90px;
+  height: 183px;
+}
+.login-below-parent {
+  position: absolute;
+  top: 117px;
+  left: 108px;
+  width: 671px;
+  height: 540px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 209px;
+  left: 422px;
+  width: 927px;
+  height: 779px;
+}
+.loginsignup-form {
+  position: relative;
+  background-color: #f1f1fb;
+  width: 100%;
+  height: 1117px;
+  overflow: hidden;
+}

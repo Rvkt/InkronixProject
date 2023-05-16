@@ -1,0 +1,235 @@
+{% load static %}
+
+<header class="rbt-header rbt-header-10">
+    <div class="rbt-sticky-placeholder"></div>
+
+    <!-- End Header Top -->
+    <div class="rbt-header-wrapper header-space-betwween header-sticky">
+        <div class="container-fluid">
+            <div class="mainbar-row rbt-navigation-center align-items-center">
+                <div class="header-left rbt-header-content">
+                    <div class="header-info">
+                        <div class="logo">
+                            <a href="{% url 'index' %}">
+                                <img src="{% static 'pagestyle\site-img\img\Logoipusm.png' %}" alt="Logoipsum" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rbt-main-navigation d-none d-xl-block">
+                    <nav class="mainmenu-nav">
+                        <ul class="mainmenu">
+                            <li class="with-megamenu has-menu-child-item position-static">
+                                <a href="{% url 'index' %}">Home </a>
+                                <!-- Start Mega Menu  -->
+                            </li>
+
+                            <li class="with-megamenu has-menu-child-item">
+                                <a href="course-list.html">Courses <i class="feather-chevron-down"></i></a>
+
+                                <div class="rbt-megamenu grid-item-2">
+                                    <div class="wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="mega-top-banner">
+                                                    <div class="content">
+                                                        <h4 class="title">Developer hub</h4>
+                                                        <p class="description">
+                                                            Start building fast, with code samples, key
+                                                            resources and more.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row--15">
+                                            <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
+                                                <h3 class="rbt-short-title">Course Layout</h3>
+                                                <ul class="mega-menu-item">
+                                                    <li>
+                                                        <a href="course-filter-one-toggle.html">Filter One
+                                                            Toggle</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-filter-one-open.html">Filter One Open</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-filter-two-toggle.html">Filter Two
+                                                            Toggle</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-filter-two-open.html">Filter Two Open</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-with-tab.html">Course With Tab</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-with-tab-two.html">Course With Tab Two</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
+                                                <h3 class="rbt-short-title">Course Layout</h3>
+                                                <ul class="mega-menu-item">
+                                                    <li>
+                                                        <a href="course-card-2.html">Course Card Two</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-card-3.html">Course Card Three</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-masonry.html">Course Masonry</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-with-sidebar.html">Course With Sidebar</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-details.html">Course Details</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="course-details-2.html">Course Details Two</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <ul class="nav-quick-access">
+                                                    <li>
+                                                        <a href="#"><i class="feather-folder-minus"></i> Quick
+                                                            Start Guide</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="feather-folder-minus"></i> For Open
+                                                            Source</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="feather-folder-minus"></i> API
+                                                            Status</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="feather-folder-minus"></i>
+                                                            Support</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="has-dropdown has-menu-child-item">
+                                <a href="#">Dashboard
+                                    <i class="feather-chevron-down"></i>
+                                </a>
+                                <ul class="submenu">
+                                    <li class="has-dropdown">
+                                        <a href="#">Instructor Dashboard</a>
+                                        <ul class="submenu">
+                                            <li>
+                                                <a href="instructor-dashboard.html">Dashboard</a>
+                                            </li>
+                                            <li><a href="dashboard.html">Profile</a></li>
+                                            <li>
+                                                <a href="instructor-enrolled-courses.html">Enrolled Courses</a>
+                                            </li>
+                                            <li>
+                                                <a href="instructor-wishlist.html">Wishlist</a>
+                                            </li>
+                                            <li><a href="instructor-reviews.html">Reviews</a></li>
+                                            <li>
+                                                <a href="instructor-my-quiz-attempts.html">My Quiz Attempts</a>
+                                            </li>
+                                            <li>
+                                                <a href="instructor-order-history.html">Order History</a>
+                                            </li>
+                                            <li>
+                                                <a href="instructor-course.html">My Course</a>
+                                            </li>
+                                            <li>
+                                                <a href="instructor-announcements.html">Announcements</a>
+                                            </li>
+                                            <li>
+                                                <a href="instructor-quiz-attempts.html">Quiz Attempts</a>
+                                            </li>
+                                            <li>
+                                                <a href="instructor-assignments.html">Assignments</a>
+                                            </li>
+                                            <li>
+                                                <a href="instructor-settings.html">Settings</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a href="#">Student Dashboard</a>
+                                        <ul class="submenu">
+                                            <li>
+                                                <a href="student-dashboard.html">Dashboard</a>
+                                            </li>
+                                            <li><a href="student-profile.html">Profile</a></li>
+                                            <li>
+                                                <a href="student-enrolled-courses.html">Enrolled Courses</a>
+                                            </li>
+                                            <li><a href="student-wishlist.html">Wishlist</a></li>
+                                            <li><a href="student-reviews.html">Reviews</a></li>
+                                            <li>
+                                                <a href="student-my-quiz-attempts.html">My Quiz Attempts</a>
+                                            </li>
+                                            <li>
+                                                <a href="student-order-history.html">Order History</a>
+                                            </li>
+                                            <li><a href="student-settings.html">Settings</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="with-megamenu has-menu-child-item position-static">
+                                <a href="{% url 'about' %}">About</a>
+                                <!-- Start Mega Menu  -->
+                            </li>
+
+                            <li class="with-megamenu has-menu-child-item position-static">
+                                <a href="{% url 'contact' %}">Contact</a>
+                            </li>
+
+                            <li class="with-megamenu has-menu-child-item position-static">
+                                <a href="{% url 'blog' %}">Blog</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <!--rbt-header-content-->
+                    <div class="rbt-btn-wrapper d-none d-xl-block col-mb-2">
+                        <div class="text-end">
+                            <!-- Login and Sign Up buttons -->
+                            <a href="{% url 'login' %}">
+                                <button type="button" class="btn btn-primary btn-lg fs-3">
+                                    Login
+                                </button>
+                            </a>
+                            <a href="{% url 'signup' %}">
+                                <button type="button" class="btn btn-primary btn-lg fs-3">
+                                    Signup
+                                </button>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start Mobile-Menu-Bar -->
+                <div class="mobile-menu-bar d-block d-xl-none">
+                    <div class="hamberger">
+                        <button class="hamberger-button rbt-round-btn">
+                            <i class="feather-menu"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Start Mobile-Menu-Bar -->
+            </div>
+        </div>
+    </div>
+</header>

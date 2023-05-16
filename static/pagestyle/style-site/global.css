@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-lato: Lato;
+  --font-plus-jakarta-sans: "Plus Jakarta Sans";
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+  --font-size-11xl: 30px;
+
+  /* Colors */
+  --color-black: #000;
+  --color-mediumslateblue: #4540d9;
+
+  /* border radiuses */
+  --br-xl: 20px;
+}
