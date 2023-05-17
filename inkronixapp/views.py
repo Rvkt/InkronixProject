@@ -24,6 +24,10 @@ def blog(request):
     return render(request, 'Blogs/blog.html')
 
 
+def Course(request):
+    return render(request, 'Course/courses.html')
+
+
 
 
 # --------------- Vedant 2023_05_16 18:34 -------------------------------------------

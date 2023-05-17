@@ -4,4 +4,4 @@ from django.shortcuts import render
 # Create your views here.
 
 def Course(request):
-    pass
+    return render(request, 'Course/courses.html')
