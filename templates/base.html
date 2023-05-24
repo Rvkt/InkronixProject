@@ -39,7 +39,7 @@
 <body class="rbt-header-sticky">
     <!--header start -->
    
-    <header class="rbt-header rbt-header-10">
+    {% comment %} <header class="rbt-header rbt-header-10">
         <div class="rbt-sticky-placeholder"></div>
 
         <!-- End Header Top -->
@@ -164,34 +164,34 @@
                                     </a>
                                     <ul class="submenu">
                                         <li class="has-dropdown">
-                                            <a href="#">Instructor Dashboard</a>
+                                            <a href="{% url 'instructor' %}">Instructor Dashboard</a>
                                             <ul class="submenu">
                                                 <li>
                                                     <a href="instructor-dashboard.html">Dashboard</a>
                                                 </li>
                                                 <li><a href="dashboard.html">Profile</a></li>
-                                                <li>
+                                                <!-- <li>
                                                     <a href="instructor-enrolled-courses.html">Enrolled Courses</a>
-                                                </li>
-                                                <li>
+                                                </li> -->
+                                                <!-- <li>
                                                     <a href="instructor-wishlist.html">Wishlist</a>
-                                                </li>
-                                                <li><a href="instructor-reviews.html">Reviews</a></li>
-                                                <li>
+                                                </li> -->
+                                                <!-- <li><a href="instructor-reviews.html">Reviews</a></li> -->
+                                                <!-- <li>
                                                     <a href="instructor-my-quiz-attempts.html">My Quiz Attempts</a>
-                                                </li>
-                                                <li>
+                                                </li> -->
+                                                <!-- <li>
                                                     <a href="instructor-order-history.html">Order History</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a href="instructor-course.html">My Course</a>
                                                 </li>
                                                 <li>
                                                     <a href="instructor-announcements.html">Announcements</a>
                                                 </li>
-                                                <li>
+                                                <!-- <li>
                                                     <a href="instructor-quiz-attempts.html">Quiz Attempts</a>
-                                                </li>
+                                                </li> -->
                                                 <li>
                                                     <a href="instructor-assignments.html">Assignments</a>
                                                 </li>
@@ -271,9 +271,9 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> {% endcomment %}
     <!-- Alternate Way to add header -->
-    {% comment %} {% include 'header.html' %} {% endcomment %}
+    {% include 'header.html' %}
 
     <!--header end -->
 
@@ -586,7 +586,7 @@
     {% block content %}{% endblock content %}
 
     <!-- Alternate Way to add footer -->
-    {% comment %} {% include 'footer.html' %} {% endcomment %}
+    {% include 'footer.html' %}
 
 
 

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'blog',
     'course',
     'inkronixapp',
+    'instructor',
 ]
 
 MIDDLEWARE = [

@@ -11,7 +11,7 @@
                     <div class="header-info">
                         <div class="logo">
                             <a href="{% url 'index' %}">
-                                <img src="{% static 'pagestyle\site-img\img\Logoipusm.png' %}" alt="Logoipsum" />
+                                <img src="{% static 'pagestyle\site-img\img\Inkronix_Logo.jpeg' %}" alt="Logoipsum" />
                             </a>
                         </div>
                     </div>
@@ -125,39 +125,39 @@
                                 </a>
                                 <ul class="submenu">
                                     <li class="has-dropdown">
-                                        <a href="#">Instructor Dashboard</a>
+                                        <a href="{% url 'instructor' %}">Instructor Dashboard</a>
                                         <ul class="submenu">
                                             <li>
-                                                <a href="instructor-dashboard.html">Dashboard</a>
+                                                <a href="{% url 'instructor_dashboard' %}">Dashboard</a>
                                             </li>
-                                            <li><a href="dashboard.html">Profile</a></li>
+                                            <li><a href="{% url 'instructor_profile' %}">Profile</a></li>
                                             <li>
-                                                <a href="instructor-enrolled-courses.html">Enrolled Courses</a>
-                                            </li>
-                                            <li>
-                                                <a href="instructor-wishlist.html">Wishlist</a>
-                                            </li>
-                                            <li><a href="instructor-reviews.html">Reviews</a></li>
-                                            <li>
-                                                <a href="instructor-my-quiz-attempts.html">My Quiz Attempts</a>
+                                                <a href="{% url 'instructor_enrolled_courses' %}">Enrolled Courses</a>
                                             </li>
                                             <li>
-                                                <a href="instructor-order-history.html">Order History</a>
+                                                <a href="{% url 'instructor_wishlist' %}">Wishlist</a>
+                                            </li>
+                                            <li><a href="{% url 'instructor_reviews' %}">Reviews</a></li>
+                                            <li>
+                                                <a href="{% url 'instructor_my_quiz_attempts' %}">My Quiz Attempts</a>
                                             </li>
                                             <li>
-                                                <a href="instructor-course.html">My Course</a>
+                                                <a href="{% url 'instructor_order_history' %}">Order History</a>
                                             </li>
                                             <li>
-                                                <a href="instructor-announcements.html">Announcements</a>
+                                                <a href="{% url 'instructor_courses' %}">My Course</a>
                                             </li>
                                             <li>
-                                                <a href="instructor-quiz-attempts.html">Quiz Attempts</a>
+                                                <a href="{% url 'instructor_announcements' %}">Announcements</a>
                                             </li>
                                             <li>
-                                                <a href="instructor-assignments.html">Assignments</a>
+                                                <a href="{% url 'instructor_quiz_attempts' %}">Quiz Attempts</a>
                                             </li>
                                             <li>
-                                                <a href="instructor-settings.html">Settings</a>
+                                                <a href="{% url 'instructor_assignments' %}">Assignments</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'instructor_settings' %}">Settings</a>
                                             </li>
                                         </ul>
                                     </li>

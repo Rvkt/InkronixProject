@@ -12,5 +12,4 @@ urlpatterns = [
     path('signup/',views.registration,name="signup"),
     path('courses/', views.Course, name='course'),
 
-
 ]

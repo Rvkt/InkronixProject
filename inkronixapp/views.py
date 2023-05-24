@@ -132,5 +132,7 @@ def registration(request):
 #                 messages.error(request,"Invalid username or password!")
 #                 return redirect('login')
 #     else:
-#         return render(request,'inkronixapp/registration.html')       
-    
+#         return render(request,'inkronixapp/registration.html')  
+# 
+# 
+# 
