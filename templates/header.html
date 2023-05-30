@@ -11,7 +11,7 @@
                     <div class="header-info">
                         <div class="logo">
                             <a href="{% url 'index' %}">
-                                <img src="{% static 'pagestyle\site-img\img\Inkronix_Logo.jpeg' %}" alt="Logoipsum" />
+                                <img src="{% static 'pagestyle\site-img\img\Inkronix_Logo.png' %}" alt="Logoipsum" />
                             </a>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
 
                                 {% if user.is_superuser %}
                                     <a href="admin/">
-                                        <button type="button" class="btn btn-danger btn-lg fs-2 mx-3 px-4 py-3">
+                                        <button type="button" class="btn btn-danger btn-lg fs-3 mx-3 px-5 py-3">
                                             Admin
                                         </button>
                                     </a>
@@ -184,19 +184,19 @@
 
                             <div class="dropdown">
                                 <a href="{% url 'login' %}">
-                                    <button type="button" class="btn btn-primary btn-lg fs-2 mx-3 px-4 py-3">
+                                    <button type="button" class="btn btn-primary btn-lg fs-3 mx-3 px-5 py-3 round-circle">
                                         Login
                                     </button>
                                 </a>
 
-                                <a href="{% url 'register' %}">
+                                {% comment %} <a href="{% url 'register' %}">
                                     <button type="button" class="btn btn-primary btn-lg fs-2 mx-3 px-4 py-3">
                                         Signup
                                     </button>
-                                </a>
+                                </a> {% endcomment %}
 
                                 
-                                <button class="btn btn-primary btn-lg fs-2 mx-3 px-4 py-3 dropdown-toggle" type="button"
+                                <button class="btn btn-primary btn-lg fs-3 mx-3 px-5 py-3 dropdown-toggle" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Signup
                                 </button>

@@ -15,3 +15,8 @@ def allcategory(request):
 
 def about(request):
     return render(request, 'home/about.html')
+
+
+
+def testing_idea(request):
+    return render(request, 'home/testing.html')
