@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="d-flex justify-content-center align-items-center h-60">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card my-5 p-5">
+            <div class="btn-group btn-group-lg p-5" role="group" aria-label="Large button group">
+
+                <a href="{% url 'student_register' %}" class="btn btn-outline-primary fs-1 fw-bold p-5">
+                    Student
+                </a>
+                <a href="{% url 'instructor_register' %}" class="btn btn-outline-primary fs-1 fw-bold p-5">
+                    Instructor
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

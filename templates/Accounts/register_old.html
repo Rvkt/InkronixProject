@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+      <div class="d-flex justify-content-center align-items-center h-60">
+        <div class="col-12 col-md-8 col-lg-6">
+
+            <div class="card my-5">
+              <div class="card-header text-uppercase text-center p-0">
+                <ul class="nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active px-5 fs-1" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                      Student Registration
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link px-5 fs-1" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
+                      Instructor Registration
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                
+                <div class="tab-content" id="pills-tabContent">
+                  <!-- Student Section -->
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                      <div class="card-body p-4 rounded">
+                
+                            
+                        <form class="p-4" action="{% url 'student_register' %}" method="POST">
+                          {% csrf_token %}
+                          <div class="form-outline mb-3">
+                            <input type="text" name="name" id="form3Example1cg"
+                              class="form-control form-control-lg bg-transparent border-dark" placeholder="Your Name" required/>
+                            <label class="form-label" for="form3Example1cg"></label>
+                          </div>
+            
+                          <div class="form-outline mb-3">
+                            <input type="email" name="email" id="form3Example3cg"
+                              class="form-control form-control-lg bg-transparent border-dark" placeholder="Enter email" required/>
+                            <label class="form-label" for="form3Example3cg"></label>
+                          </div>
+            
+                          <div class="form-outline mb-3">
+                            <input type="password" name="password" id="form3Example4cg"
+                              class="form-control form-control-lg bg-transparent border-dark" placeholder="Password" required/>
+                            <label class="form-label" for="form3Example4cg"></label>
+                          </div>
+            
+                          <div class="form-outline mb-3">
+                            <input type="password" name="confirm_password" id="form3Example4cdg"
+                              class="form-control form-control-lg bg-transparent border-dark"
+                              placeholder="Repeat your password" required/>
+                            <label class="form-label" for="form3Example4cdg"></label>
+                          </div>
+            
+                          <div class="form-check d-flex justify-content-center mb-3">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg"/>
+                            <label class="form-check-label" for="form2Example3g">
+                              I agree all statements in <a href="#!" class="text-center-50%"><u>Terms of service</u></a>
+                            </label>
+                          </div>
+            
+                          <div class="d-flex justify-content-center">
+                            <a href="http://127.0.0.1:8000/login/">
+                            <button type="submit"
+                              class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                          </a>
+                          </div>
+            
+                          <p class="text-center text-muted mt-3">Already have an account? <a href="http://127.0.0.1:8000/login/"
+                              class="fw-bold text-body"><u>Login here</u></a></p>
+            
+                        </form>
+
+                        {% comment %} 20230529_0157 {% endcomment %}
+                        
+            
+                      </div>
+                  </div>
+
+                  <!-- Teacher Section -->
+                  <div class="tab-pane fade bg-warning" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                    <div class="card-body p-4 rounded">
+                
+                            
+                      <form class="p-4" action=" " method="POST">
+                        {% csrf_token %}
+                        <div class="form-outline mb-3">
+                          <input type="text" name="name" id="form3Example1cg"
+                            class="form-control form-control-lg bg-transparent border-dark" placeholder="Your Name" required/>
+                          <label class="form-label" for="form3Example1cg"></label>
+                        </div>
+          
+                        <div class="form-outline mb-3">
+                          <input type="email" name="email" id="form3Example3cg"
+                            class="form-control form-control-lg bg-transparent border-dark" placeholder="Enter email" required/>
+                          <label class="form-label" for="form3Example3cg"></label>
+                        </div>
+          
+                        <div class="form-outline mb-3">
+                          <input type="password" name="password" id="form3Example4cg"
+                            class="form-control form-control-lg bg-transparent border-dark" placeholder="Password" required/>
+                          <label class="form-label" for="form3Example4cg"></label>
+                        </div>
+          
+                        <div class="form-outline mb-3">
+                          <input type="password" name="confirm_password" id="form3Example4cdg"
+                            class="form-control form-control-lg bg-transparent border-dark"
+                            placeholder="Repeat your password" required/>
+                          <label class="form-label" for="form3Example4cdg"></label>
+                        </div>
+          
+                        <div class="form-check d-flex justify-content-center mb-3">
+                          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" required/>
+                          <label class="form-check-label" for="form2Example3g">
+                            I agree all statements in <a href="#!" class="text-center-50%"><u>Terms of service</u></a>
+                          </label>
+                        </div>
+          
+                        <div class="d-flex justify-content-center">
+                          <a href="http://127.0.0.1:8000/login/">
+                          <button type="submit"
+                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                        </a>
+                        </div>
+          
+                        <p class="text-center text-muted mt-3">Already have an account? <a href="http://127.0.0.1:8000/login/"
+                            class="fw-bold text-body"><u>Login here</u></a></p>
+          
+                      </form>
+
+                      
+          
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+
+{% endblock content %}

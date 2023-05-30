@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card">
+      <div class="card-header text-black">
+        <h2>Instructor Registration</h2>
+      </div>
+      <div class="card-body">
+        <form action="{% url 'instructor_register' %}" method="POST">
+          {% csrf_token %}
+          {% comment %} {{ form.as_p}} {% endcomment %}
+
+          {% for field in form %}
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">{{field.label}}</label>
+            {{field}}
+          </div>
+
+            <!-- For loop for error -->
+            {% for error in field.errors %}
+            <p><small style="color: red">{{error}}</small></p>
+            {% endfor %}
+          {% endfor %}
+
+          <input type="submit" value="Register" class="btn btn-block btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

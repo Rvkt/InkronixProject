@@ -8,14 +8,14 @@
     <!-- Start breadcrumb Area -->
     <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3">
         <div class="breadcrumb-inner">
-            <img src="assets/images/bg/bg-image-10.jpg" alt="Education Images">
+            <img src={% static 'assets/images/bg/bg-image-10.jpg' %} alt="Education Images">
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="content text-start">
                         <ul class="page-list">
-                            <li class="rbt-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="rbt-breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
                             <li>
                                 <div class="icon-right"><i class="feather-chevron-right"></i></div>
                             </li>
@@ -28,7 +28,7 @@
 
                             <div class="feature-sin best-seller-badge">
                                 <span class="rbt-badge-2">
-                                    <span class="image"><img src="assets/images/icons/card-icon-1.png"
+                                    <span class="image"><img src={% static 'assets/images/icons/card-icon-1.png'%}
                                             alt="Best Seller Icon"></span> Bestseller
                                 </span>
                             </div>
@@ -55,7 +55,7 @@
                         <div class="rbt-author-meta mb--20">
                             <div class="rbt-avater">
                                 <a href="#">
-                                    <img src="assets/images/client/avatar-02.png" alt="Sophia Jaymes">
+                                    <img src={% static 'assets/images/client/avatar-02.png' %} alt="Sophia Jaymes">
                                 </a>
                             </div>
                             <div class="rbt-author-info">
@@ -571,7 +571,7 @@
                                 <div class="media align-items-center">
                                     <div class="thumbnail">
                                         <a href="#">
-                                            <img src="assets/images/testimonial/testimonial-7.jpg" alt="Author Images">
+                                            <img src={% static 'assets/images/testimonial/testimonial-7.jpg' %} alt="Author Images">
                                         </a>
                                     </div>
                                     <div class="media-body">
@@ -784,7 +784,7 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-3.jpg" alt="Author Images">
+                                                <img src={% static 'assets/images/testimonial/testimonial-3.jpg' %} alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -824,7 +824,7 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-4.jpg" alt="Author Images">
+                                                <img src={% static 'assets/images/testimonial/testimonial-4.jpg' %} alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -862,7 +862,7 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-1.jpg" alt="Author Images">
+                                                <img src={% static 'assets/images/testimonial/testimonial-1.jpg' %} alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -900,7 +900,7 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-6.jpg" alt="Author Images">
+                                                <img src={% static 'assets/images/testimonial/testimonial-6.jpg' %} alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -938,7 +938,7 @@
                                     <div class="media">
                                         <div class="thumbnail">
                                             <a href="#">
-                                                <img src="assets/images/testimonial/testimonial-8.jpg" alt="Author Images">
+                                                <img src={% static 'assets/images/testimonial/testimonial-8.jpg' %} alt="Author Images">
                                             </a>
                                         </div>
                                         <div class="media-body">
@@ -997,8 +997,8 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                                 <div class="rbt-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
-                                        <a href="course-details.html">
-                                            <img src="assets/images/course/course-online-01.jpg" alt="Card image">
+                                        <a href={% url 'course-details' %}>
+                                            <img src={% static 'assets/images/course/course-online-01.jpg' %} alt="Card image">
                                             <div class="rbt-badge-3 bg-white">
                                                 <span>-40%</span>
                                                 <span>Off</span>
@@ -1023,7 +1023,7 @@
                                             </div>
                                         </div>
 
-                                        <h4 class="rbt-card-title"><a href="course-details.html">React Front To Back</a>
+                                        <h4 class="rbt-card-title"><a href={% url 'course-details' %}>React Front To Back</a>
                                         </h4>
 
                                         <ul class="rbt-meta">
@@ -1036,7 +1036,7 @@
                                         <div class="rbt-author-meta mb--10">
                                             <div class="rbt-avater">
                                                 <a href="#">
-                                                    <img src="assets/images/client/avatar-02.png" alt="Sophia Jaymes">
+                                                    <img src={% static 'assets/images/client/avatar-02.png' %} alt="Sophia Jaymes">
                                                 </a>
                                             </div>
                                             <div class="rbt-author-info">
@@ -1048,7 +1048,7 @@
                                                 <span class="current-price">$60</span>
                                                 <span class="off-price">$120</span>
                                             </div>
-                                            <a class="rbt-btn-link" href="course-details.html">Learn
+                                            <a class="rbt-btn-link" href={% url 'course-details' %}>Learn
                                                 More<i class="feather-arrow-right"></i></a>
                                         </div>
                                     </div>
@@ -1060,8 +1060,8 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
                                 <div class="rbt-card variation-01 rbt-hover">
                                     <div class="rbt-card-img">
-                                        <a href="course-details.html">
-                                            <img src="assets/images/course/course-online-02.jpg" alt="Card image">
+                                        <a href={% url 'course-details' %}>
+                                            <img src={% static 'assets/images/course/course-online-02.jpg' %} alt="Card image">
                                         </a>
                                     </div>
                                     <div class="rbt-card-body">
@@ -1081,7 +1081,7 @@
                                                         class="feather-bookmark"></i></a>
                                             </div>
                                         </div>
-                                        <h4 class="rbt-card-title"><a href="course-details.html">PHP Beginner Advanced</a>
+                                        <h4 class="rbt-card-title"><a href={% url 'course-details' %}>PHP Beginner Advanced</a>
                                         </h4>
                                         <ul class="rbt-meta">
                                             <li><i class="feather-book"></i>12 Lessons</li>
@@ -1105,7 +1105,7 @@
                                                 <span class="current-price">$60</span>
                                                 <span class="off-price">$120</span>
                                             </div>
-                                            <a class="rbt-btn-link left-icon" href="course-details.html"><i
+                                            <a class="rbt-btn-link left-icon" href={% url 'course-details' %}><i
                                                     class="feather-shopping-cart"></i> Add To Cart</a>
                                         </div>
                                     </div>
@@ -1123,7 +1123,7 @@
                             <!-- Start Viedo Wrapper  -->
                             <a class="video-popup-with-text video-popup-wrapper text-center popup-video sidebar-video-hidden mb--15" href="https://www.youtube.com/watch?v=nA1Aqp0sPQo">
                                 <div class="video-content">
-                                    <img class="w-100 rbt-radius" src="assets/images/others/video-01.jpg" alt="Video Images">
+                                    <img class="w-100 rbt-radius" src={% static 'assets/images/others/video-01.jpg' %} alt="Video Images">
                                     <div class="position-to-top">
                                         <span class="rbt-btn rounded-player-2 with-animation">
                                             <span class="play-icon"></span>
@@ -1189,8 +1189,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="rbt-card variation-01 rbt-hover">
                         <div class="rbt-card-img">
-                            <a href="course-details.html">
-                                <img src="assets/images/course/course-online-03.jpg" alt="Card image">
+                            <a href={% url 'course-details' %}>
+                                <img src={% static 'assets/images/course/course-online-03.jpg' %} alt="Card image">
                                 <div class="rbt-badge-3 bg-white">
                                     <span>-10%</span>
                                     <span>Off</span>
@@ -1214,7 +1214,7 @@
                                             class="feather-bookmark"></i></a>
                                 </div>
                             </div>
-                            <h4 class="rbt-card-title"><a href="course-details.html">Angular Zero to Mastery</a>
+                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Angular Zero to Mastery</a>
                             </h4>
                             <ul class="rbt-meta">
                                 <li><i class="feather-book"></i>8 Lessons</li>
@@ -1226,7 +1226,7 @@
                             <div class="rbt-author-meta mb--20">
                                 <div class="rbt-avater">
                                     <a href="#">
-                                        <img src="assets/images/client/avatar-03.png" alt="Sophia Jaymes">
+                                        <img src={% static 'assets/images/client/avatar-03.png' %} alt="Sophia Jaymes">
                                     </a>
                                 </div>
                                 <div class="rbt-author-info">
@@ -1238,7 +1238,7 @@
                                     <span class="current-price">$80</span>
                                     <span class="off-price">$100</span>
                                 </div>
-                                <a class="rbt-btn-link" href="course-details.html">Learn
+                                <a class="rbt-btn-link" href={% url 'course-details' %}>Learn
                                     More<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
@@ -1250,8 +1250,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="rbt-card variation-01 rbt-hover">
                         <div class="rbt-card-img">
-                            <a href="course-details.html">
-                                <img src="assets/images/course/course-online-04.jpg" alt="Card image">
+                            <a href={% url 'course-details' %}>
+                                <img src={% static 'assets/images/course/course-online-04.jpg' %} alt="Card image">
                                 <div class="rbt-badge-3 bg-white">
                                     <span>-40%</span>
                                     <span>Off</span>
@@ -1276,7 +1276,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="rbt-card-title"><a href="course-details.html">Web Front To Back</a>
+                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Web Front To Back</a>
                             </h4>
                             <ul class="rbt-meta">
                                 <li><i class="feather-book"></i>20 Lessons</li>
@@ -1287,7 +1287,7 @@
                             <div class="rbt-author-meta mb--20">
                                 <div class="rbt-avater">
                                     <a href="#">
-                                        <img src="assets/images/client/avater-01.png" alt="Sophia Jaymes">
+                                        <img src={% static 'assets/images/client/avatar-03.png' %} alt="Sophia Jaymes">
                                     </a>
                                 </div>
                                 <div class="rbt-author-info">
@@ -1300,7 +1300,7 @@
                                     <span class="current-price">$60</span>
                                     <span class="off-price">$120</span>
                                 </div>
-                                <a class="rbt-btn-link" href="course-details.html">Learn
+                                <a class="rbt-btn-link" href={% url 'course-details' %}>Learn
                                     More<i class="feather-arrow-right"></i></a>
                             </div>
                         </div>
@@ -1312,8 +1312,8 @@
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="rbt-card variation-01 rbt-hover">
                         <div class="rbt-card-img">
-                            <a href="course-details.html">
-                                <img src="assets/images/course/course-online-05.jpg" alt="Card image">
+                            <a href={% url 'course-details' %}>
+                                <img src={% static 'assets/images/course/course-online-05.jpg' %} alt="Card image">
                                 <div class="rbt-badge-3 bg-white">
                                     <span>-20%</span>
                                     <span>Off</span>
@@ -1337,7 +1337,7 @@
                                             class="feather-bookmark"></i></a>
                                 </div>
                             </div>
-                            <h4 class="rbt-card-title"><a href="course-details.html">SQL Beginner Advanced</a>
+                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>SQL Beginner Advanced</a>
                             </h4>
                             <ul class="rbt-meta">
                                 <li><i class="feather-book"></i>12 Lessons</li>
@@ -1349,7 +1349,7 @@
                             <div class="rbt-author-meta mb--20">
                                 <div class="rbt-avater">
                                     <a href="#">
-                                        <img src="assets/images/client/avatar-02.png" alt="Sophia Jaymes">
+                                        <img src={% static 'assets/images/client/avatar-02.png' %} alt="Sophia Jaymes">
                                     </a>
                                 </div>
                                 <div class="rbt-author-info">
@@ -1361,7 +1361,7 @@
                                     <span class="current-price">$60</span>
                                     <span class="off-price">$120</span>
                                 </div>
-                                <a class="rbt-btn-link left-icon" href="course-details.html"><i
+                                <a class="rbt-btn-link left-icon" href={% url 'course-details' %}><i
                                         class="feather-shopping-cart"></i> Add To Cart</a>
                             </div>
                         </div>
@@ -1372,7 +1372,6 @@
             </div>
         </div>
     </div>
-
 
 
 {% endblock content %}
