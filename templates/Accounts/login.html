@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} {% load static %}
 
 {% block content %}
 
@@ -8,11 +7,12 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card bg-transparent" style="border-radius: 1rem;">
-            <div class="card-body p-5 text-center shadow rounded">
+            <div class="card-body p-5 shadow rounded">
              
               <div class="mb-md-5 mt-md-3 pb-5">
 
-                <h2 class="fw-bold mb-2 text-uppercase">LOGIN BELOW!</h2>
+                <h2 class="fw-bold mb-2 text-center text-uppercase">LOGIN BELOW!</h2>
+                {% comment %} 
                 <p class="text-white-50 mb-5"></p>
                 <form method="post">
                   {% csrf_token %}
@@ -35,9 +35,36 @@
                   <p>or</p>
                   <p class="mb-0">New User?<a href="{% url 'register'%}">Register Here</a>
                   </p>
+                </form> {% endcomment %}
+
+
+                <!-- New Login Form --> 
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  {% comment %} {{ form.as_p}} {% endcomment %}
+        
+                  {% for field in form %}
+        
+                    <div class="mb-3">
+                      <label for="exampleInput" class="form-label">{{field.label}}</label>
+                      {{field}}
+                    </div>
+        
+                    <!-- For loop for error -->
+                    {% for error in field.errors %}
+                    <p><small style="color: red">{{error}}</small></p>
+                    {% endfor %}
+                  {% endfor %}
+        
+                  <input type="submit" value="Login" class="btn btn-block btn-primary">
                 </form>
 
+                <p>or</p>
+                  <p class="mb-0">New User?<a href="{% url 'register'%}">Register Here</a>
+                  </p>
+
               </div>
+
 
             </div>
           </div>
@@ -45,6 +72,9 @@
       </div>
     </div>
   </div>
+
+
+
 
 
 
