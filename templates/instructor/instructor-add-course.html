@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+<div class="row m-5">
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-header text-black">
+          <h2 class="text-center pt-4">Creating New Course</h2>
+        </div>
+        <div class="card-body p-5">
+          <form action="{% url 'course_added' %}" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+  
+            {% for field in form %}
+  
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">{{field.label}}</label>
+              {{field}}
+            </div>
+  
+              <!-- For loop for error -->
+              {% for error in field.errors %}
+              <p><small style="color: red">{{error}}</small></p>
+              {% endfor %}
+            {% endfor %}
+  
+            <input type="submit" value="Register" class="btn btn-block btn-primary">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock content %}
+
+
+
+
+
+

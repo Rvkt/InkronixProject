@@ -7,11 +7,13 @@
     <div class="rbt-header-wrapper header-space-betwween header-sticky">
         <div class="container-fluid">
             <div class="mainbar-row rbt-navigation-center align-items-center">
+
+                <!--LOGO-->
                 <div class="header-left rbt-header-content">
                     <div class="header-info">
                         <div class="logo">
                             <a href="{% url 'index' %}">
-                                <img src="{% static 'pagestyle\site-img\img\Inkronix_Logo.png' %}" alt="Logoipsum" />
+                                <img src="{% static 'pagestyle\site-img\img\Inkronix_Logo.jpeg' %}" alt="Logoipsum" />
                             </a>
                         </div>
                     </div>
@@ -25,6 +27,8 @@
                                 <!-- Start Mega Menu  -->
                             </li>
 
+
+                            {% comment %} Courses Dropdown {% endcomment %}
                             <li class="with-megamenu has-menu-child-item">
                                 <a href="{% url 'courses' %}">Courses <i class="feather-chevron-down"></i></a>
 
@@ -131,17 +135,28 @@
                                 </div>
                             </li>
 
+
+
+                            <!-- Dashboard Dropdown -->
+
+                            {% if user.is_authenticated %}
                             <li class="has-dropdown has-menu-child-item">
+                                
                                 <a href="">Dashboard
                                     <i class="feather-chevron-down"></i>
                                 </a>
+                            
                                 <ul class="submenu">
                                     <li class="has-dropdown">
                                         <a href="{% url 'instructor' %}">Instructor Dashboard</a>
                                         <a href="{% url 'student' %}">Student Dashboard</a>
                                     </li>
                                 </ul>
+                            
                             </li>
+                            {% endif %}
+
+
 
                             <li class="with-megamenu has-menu-child-item position-static">
                                 <a href="{% url 'about' %}">About</a>
@@ -158,6 +173,8 @@
                         </ul>
                     </nav>
                 </div>
+
+                <!-- CTA BUTTONS -->
                 <div class="header-right">
                     <!--rbt-header-content-->
                     <div class="rbt-btn-wrapper d-none d-xl-block col-mb-2">
@@ -172,7 +189,7 @@
 
                                 {% if user.is_superuser %}
                                     <a href="admin/">
-                                        <button type="button" class="btn btn-danger btn-lg fs-3 mx-3 px-5 py-3">
+                                        <button type="button" class="btn btn-danger btn-lg fs-2 mx-3 px-4 py-3">
                                             Admin
                                         </button>
                                     </a>
@@ -184,7 +201,7 @@
 
                             <div class="dropdown">
                                 <a href="{% url 'login' %}">
-                                    <button type="button" class="btn btn-primary btn-lg fs-3 mx-3 px-5 py-3 round-circle">
+                                    <button type="button" class="btn btn-primary btn-lg fs-2 mx-3 px-4 py-3">
                                         Login
                                     </button>
                                 </a>
@@ -196,7 +213,7 @@
                                 </a> {% endcomment %}
 
                                 
-                                <button class="btn btn-primary btn-lg fs-3 mx-3 px-5 py-3 dropdown-toggle" type="button"
+                                <button class="btn btn-primary btn-lg fs-2 mx-3 px-4 py-3 dropdown-toggle" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Signup
                                 </button>
