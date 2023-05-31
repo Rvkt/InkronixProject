@@ -15,3 +15,7 @@ def allcategory(request):
 
 def about(request):
     return render(request, 'home/about.html')
+
+
+def testing(request):
+    return render(request, 'home/testing.html')
