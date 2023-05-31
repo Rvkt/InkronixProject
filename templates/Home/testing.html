@@ -1,528 +1,752 @@
 {% extends 'base.html' %} {% load static %}
+{% block content %}
+<!--  Tabs Start -->
+<div class="container-lg text-center border p-2">
 
-            <!--  Tabs Start -->
-            <div class="container-lg text-center border p-2">
-                <div class="card-header bg-transparent border border-bottom-0  p-0">
-                    <ul class="nav nav-pills mb-0" id="pills-tab" role="tablist">
-                        <!-- All Category -->
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active border border-bottom-0" id="pills-mostpopular-tab" data-bs-toggle="pill" data-bs-target="#pills-mostpopular" type="button" role="tab" aria-controls="pills-mostpopular" aria-selected="true">Most Popular</button>
-                        </li>
-            
-                        <!-- Python -->
-                        <li class="nav-item " role="presentation">
-                            <button class="nav-link border border-bottom-0" id="pills-python-tab" data-bs-toggle="pill" data-bs-target="#pills-python" type="button" role="tab" aria-controls="pills-python" aria-selected="true">Python</button>
-                        </li>
-            
-                        <!-- Java -->
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link border border-bottom-0" id="pills-java-tab" data-bs-toggle="pill" data-bs-target="#pills-java" type="button" role="tab" aria-controls="pills-java" aria-selected="false">Java</button>
-                        </li>
-            
-                        <!-- Django -->
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link border border-bottom-0" id="pills-django-tab" data-bs-toggle="pill" data-bs-target="#pills-django" type="button" role="tab" aria-controls="pills-django" aria-selected="false">Django</button>
-                        </li>
-                    </ul>
+  <!-- TAB LINKS ARE HERE -->
+  <div class="card-header bg-transparent border border-bottom-0 p-0">
+    <ul class="nav nav-pills mb-0" id="pills-tab" role="tablist">
+      <!-- All Category -->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active border border-bottom-0" id="pills-mostpopular-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-mostpopular" type="button" role="tab" aria-controls="pills-mostpopular"
+          aria-selected="true">Most Popular</button>
+      </li>
+
+      <!-- Python -->
+      <li class="nav-item " role="presentation">
+        <button class="nav-link border border-bottom-0" id="pills-python-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-python" type="button" role="tab" aria-controls="pills-python"
+          aria-selected="true">Python</button>
+      </li>
+
+      <!-- Java -->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link border border-bottom-0" id="pills-java-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-java" type="button" role="tab" aria-controls="pills-java"
+          aria-selected="false">Java</button>
+      </li>
+
+      <!-- Django -->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link border border-bottom-0" id="pills-django-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-django" type="button" role="tab" aria-controls="pills-django"
+          aria-selected="false">Django</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- TAB CONTENTS ARE HERE -->
+  <div class="card-body">
+
+
+    <!-- Tab content is here-->
+    <div class="tab-content" id="pills-tabContent">
+      <!-- TAB CONTENT FOR ALL COURSES -->
+      <div class="tab-pane fade show active" id="pills-mostpopular" role="tabpanel"
+        aria-labelledby="pills-mostpopular-tab" tabindex="0">
+        <h4 class="card-title text-start py-5">Expand your career opportunities with hugh collection of our
+          courses.</h4>
+        <div class="me-2 ms-0 row">
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href="/courses/course-details">
+                  <img src="/static/assets/images/course/course-online-03.jpg" alt="Card image">
+                  <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div>
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
                 </div>
-                <div class="card-body">
-            
-            
-                                    <!-- Tab content is here-->
-                                    <div class="tab-content" id="pills-tabContent">
-                                        <!-- TAB CONTENT FOR ALL COURSES -->
-                                        <div class="tab-pane fade show active" id="pills-mostpopular" role="tabpanel" aria-labelledby="pills-mostpopular-tab" tabindex="0">
-                                            <h4 class="card-title text-start py-5">Expand your career opportunities with hugh collection of our courses.</h4>
-                                            <div class="me-2 ms-0 row">
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href="/courses/course-details">
-                                                                <img src="/static/assets/images/course/course-online-03.jpg" alt="Card image">
-                                                                <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href="/courses/course-details">Angular Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Languages</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                <a class="btn btn-primary btn-lg" href="/courses/course-details" role="button">Enroll Now</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href="/courses/course-details">
-                                                                <img src="/static/assets/images/course/course-online-03.jpg" alt="Card image">
-                                                                <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href="/courses/course-details">Basics of Python</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Languages</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                <a class="btn btn-primary btn-lg" href="/courses/course-details" role="button">Enroll Now</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href="/courses/course-details">
-                                                                <img src="/static/assets/images/course/course-online-03.jpg" alt="Card image">
-                                                                <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href="/courses/course-details">Python Advance</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Languages</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                <a class="btn btn-primary btn-lg" href="/courses/course-details" role="button">Enroll Now</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- TAB CONTENT FOR PYTHON COURSES -->
-                                        <div class="tab-pane fade" id="pills-python" role="tabpanel" aria-labelledby="pills-python-tab" tabindex="0">
-            
-                                            <h4 class="card-title text-start py-5">Expand your career opportunities with Python</h4>
-                                                
-                                            <div class="me-2 ms-0 row">
-            
-            
-                                                
-            
-                                                
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (1).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Python Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Python</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (2).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Python Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Python</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (3).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Python Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Python</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- TAB CONTENT FOR JAVA COURSES -->
-                                        <div class="tab-pane fade" id="pills-java" role="tabpanel" aria-labelledby="pills-java-tab" tabindex="0">
-                                            <h4 class="card-title text-start py-5">Expand your career opportunities with Java</h4>
-                                            <div class="me-2 ms-0 row">
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (1).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Java Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Java</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (2).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Java Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Java</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (3).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Java Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Java</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                
-                                        <!-- TAB CONTENT FOR DJANGO COURSES -->
-                                        <div class="tab-pane fade" id="pills-django" role="tabpanel" aria-labelledby="pills-django-tab" tabindex="0">
-                                            <h4 class="card-title text-start py-5">Expand your career opportunities with Django</h4>
-                                            <div class="me-2 ms-0 row">
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (1).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Django Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Django</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (2).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Django Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Django</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
-                                                    <div class="rbt-card variation-01 rbt-hover">
-                                                        <div class="rbt-card-img">
-                                                            <a href={% url 'course-details' %}>
-                                                                <img src="{% static 'pagestyle/site-img/img/Course (3).png' %}" class="rounded card-img-top" alt="...">
-                                                                {% comment %} <div class="rbt-badge-3 bg-white">
-                                                                    <span>-10%</span>
-                                                                    <span>Off</span>
-                                                                </div> {% endcomment %}
-                                                            </a>
-                                                        </div>
-                                                        <div class="rbt-card-body">
-                                                            <div class="rbt-card-top">
-                                                            </div>
-                                                            <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Django Zero to Mastery</a>
-                                                            </h4>
-                                                            <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
-                                                                the readable.</p>
-                                    
-                                                            <div class="rbt-author-meta mb--20">
-                                                                <div class="rbt-author-info">
-                                                                    By <a href="profile.html">Slaughter</a> In <a href="#">Django</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rbt-card-bottom">
-                                                                <div class="rbt-price">
-                                                                    <span class="current-price">$80</span>
-                                                                    <span class="off-price">$100</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a> {% endcomment %}
-                                                        <div class="row d-flex align-items-end">
-                                                            <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}" role="button">Enroll Now</a>
-                                                            {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll Now</button> {% endcomment %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-            
-                                    </div>
-            
-                    
-                  {% comment %} <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> {% endcomment %}
+                <h4 class="rbt-card-title"><a href="/courses/course-details">Angular Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Languages</a>
+                  </div>
                 </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+                  <a class="btn btn-primary btn-lg" href="/courses/course-details" role="button">Enroll Now</a>
+                </div>
+              </div>
             </div>
-            <!--  Tabs End -->
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href="/courses/course-details">
+                  <img src="/static/assets/images/course/course-online-03.jpg" alt="Card image">
+                  <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div>
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href="/courses/course-details">Basics of Python</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Languages</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+                  <a class="btn btn-primary btn-lg" href="/courses/course-details" role="button">Enroll Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href="/courses/course-details">
+                  <img src="/static/assets/images/course/course-online-03.jpg" alt="Card image">
+                  <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div>
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href="/courses/course-details">Python Advance</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Languages</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+                  <a class="btn btn-primary btn-lg" href="/courses/course-details" role="button">Enroll Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB CONTENT FOR PYTHON COURSES -->
+      <div class="tab-pane fade" id="pills-python" role="tabpanel" aria-labelledby="pills-python-tab" tabindex="0">
+
+        <h4 class="card-title text-start py-5">Expand your career opportunities with Python</h4>
+
+        <div class="me-2 ms-0 row">
+
+
+
+
+
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (1).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Python Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Python</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (2).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Python Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Python</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (3).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Python Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Python</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB CONTENT FOR JAVA COURSES -->
+      <div class="tab-pane fade" id="pills-java" role="tabpanel" aria-labelledby="pills-java-tab" tabindex="0">
+        <h4 class="card-title text-start py-5">Expand your career opportunities with Java</h4>
+        <div class="me-2 ms-0 row">
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (1).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Java Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Java</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (2).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Java Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Java</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (3).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Java Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Java</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB CONTENT FOR DJANGO COURSES -->
+      <div class="tab-pane fade" id="pills-django" role="tabpanel" aria-labelledby="pills-django-tab" tabindex="0">
+        <h4 class="card-title text-start py-5">Expand your career opportunities with Django</h4>
+        <div class="me-2 ms-0 row">
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (1).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Django Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Django</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (2).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Django Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Django</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+          <div class="bg-body col-sm mb-5 me-1 ms-2 p-3 rounded shadow">
+            <div class="rbt-card variation-01 rbt-hover">
+              <div class="rbt-card-img">
+                <a href={% url 'course-details' %}>
+                  <img src="{% static 'pagestyle/site-img/img/Course (3).png' %}" class="rounded card-img-top"
+                    alt="...">
+                  {% comment %} <div class="rbt-badge-3 bg-white">
+                    <span>-10%</span>
+                    <span>Off</span>
+                  </div> {% endcomment %}
+                </a>
+              </div>
+              <div class="rbt-card-body">
+                <div class="rbt-card-top">
+                </div>
+                <h4 class="rbt-card-title"><a href={% url 'course-details' %}>Django Zero to Mastery</a>
+                </h4>
+                <p class="rbt-card-text">Angular Js long fact that a reader will be distracted by
+                  the readable.</p>
+
+                <div class="rbt-author-meta mb--20">
+                  <div class="rbt-author-info">
+                    By <a href="profile.html">Slaughter</a> In <a href="#">Django</a>
+                  </div>
+                </div>
+                <div class="rbt-card-bottom">
+                  <div class="rbt-price">
+                    <span class="current-price">$80</span>
+                    <span class="off-price">$100</span>
+                  </div>
+
+                </div>
+              </div>
+              {% comment %} <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll
+                Now</a> {% endcomment %}
+              <div class="row d-flex align-items-end">
+                <a class="btn btn-primary btn-lg mt-5 px-5 py-3 fs-5" href="{% url 'course-details' %}"
+                  role="button">Enroll Now</a>
+                {% comment %} <button type="button" class="btn btn-primary mt-5 px-5 py-3 fs-5">Enroll
+                  Now</button> {% endcomment %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    {% comment %} <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> {% endcomment %}
+  </div>
+
+</div>
+<!--  Tabs End -->
+
+
+
+
+
+
+
+<!--  Tabs Start -->
+<div class="container-lg text-center border p-2">
+
+  <!-- NAV & TAB LINKS -->
+  <div class="card-header bg-transparent border p-0">
+    <nav>
+      <div class="nav nav-pills" id="nav-pills" role="tablist">
+        <button class="nav-link active fw-bold" id="nav-most-popular-tab" data-bs-toggle="tab" data-bs-target="#nav-most-popular" type="button" role="tab" aria-controls="nav-most-popular" aria-selected="true">
+          <small>Most Popular</small>
+        </button>
+
+
+        <button class="nav-link fw-bold" id="nav-app-web-development-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-app-web-development" type="button" role="tab" aria-controls="nav-app-web-development"
+          aria-selected="true">
+          <small>App & Web Development</small>
+        </button>
+
+
+        <button class="nav-link fw-bold" id="nav-digital-marketing-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-digital-marketing" type="button" role="tab" aria-controls="nav-digital-marketing"
+          aria-selected="false">
+          <small>Digital Marketing</small>
+        </button>
+
+
+        <button class="nav-link fw-bold" id="nav-graphics-designing-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-graphics-designing" type="button" role="tab" aria-controls="nav-graphics-designing"
+          aria-selected="false">
+          <small>Graphics Designing</small>
+        </button>
+
+
+        <button class="nav-link fw-bold" id="nav-python-programming-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-python-programming" type="button" role="tab" aria-controls="nav-python-programming"
+          aria-selected="false">
+          <small>Python Programming</small>
+        </button>
+
+
+        <button class="nav-link fw-bold" id="nav-artificial-intelligence-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-artificial-intelligence" type="button" role="tab"
+          aria-controls="nav-artificial-intelligence" aria-selected="false">
+          <small>Artificial Intelligence</small>
+        </button>
+
+
+        <button class="nav-link fw-bold" id="nav-government-exams -tab" data-bs-toggle="tab"
+          data-bs-target="#nav-government-exams " type="button" role="tab" aria-controls="nav-government-exams "
+          aria-selected="false">
+          <small>Government Exams </small>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- TAB CONTENTS -->
+  <div class="tab-content py-3" id="nav-tabContent">
+
+    <div class="tab-pane fade show active" id="nav-most-popular" role="tabpanel" aria-labelledby="nav-most-popular-tab"
+      tabindex="0">
+      <div class="card">
+        <div class="card-title">
+          <h4>
+            tab content most Popular
+          </h4>
+        </div>
+      </div><!-- TAB CONTENT FOR SPECIFIC CATEGORY -->
+    </div>
+
+
+    <div class="tab-pane fade show" id="nav-app-web-development" role="tabpanel"
+      aria-labelledby="nav-app-web-development-tab" tabindex="0">
+      <div class="card">
+        <div class="card-title">
+          <h4>
+            tab content app-web-development
+          </h4>
+        </div>
+      </div><!-- TAB CONTENT FOR SPECIFIC CATEGORY -->
+    </div>
+
+
+    <div class="tab-pane fade" id="nav-digital-marketing" role="tabpanel" aria-labelledby="nav-digital-marketing-tab"
+      tabindex="0">
+      <div class="card">
+        <div class="card-title">
+          <h4>
+            tab content digital-marketin
+          </h4>
+        </div>
+      </div><!-- TAB CONTENT FOR SPECIFIC CATEGORY -->
+    </div>
+
+
+    <div class="tab-pane fade" id="nav-graphics-designing" role="tabpanel" aria-labelledby="nav-graphics-designing-tab"
+      tabindex="0">
+      <div class="card">
+        <div class="card-title">
+          <h4>
+            tab content graphics-designing
+          </h4>
+        </div>
+      </div><!-- TAB CONTENT FOR SPECIFIC CATEGORY -->
+    </div>
+
+
+    <div class="tab-pane fade" id="nav-python-programming" role="tabpanel" aria-labelledby="nav-python-programming-tab"
+      tabindex="0">
+      <div class="card">
+        <div class="card-title">
+          <h4>
+            tab content python-programming
+          </h4>
+        </div>
+      </div><!-- TAB CONTENT FOR SPECIFIC CATEGORY -->
+    </div>
+
+
+    <div class="tab-pane fade" id="nav-artificial-intelligence" role="tabpanel"
+      aria-labelledby="nav-artificial-intelligence-tab" tabindex="0">
+      <div class="card">
+        <div class="card-title">
+          <h4>
+            tab content artificial-intelligence
+          </h4>
+        </div>
+      </div><!-- TAB CONTENT FOR SPECIFIC CATEGORY -->
+    </div>
+
+
+    <div class="tab-pane fade" id="nav-government-exams" role="tabpanel" aria-labelledby="nav-government-exams-tab"
+      tabindex="0">
+      <div class="card">
+        <div class="card-title">
+          <h4>
+            tab content government-exams
+          </h4>
+        </div>
+      </div><!-- TAB CONTENT FOR SPECIFIC CATEGORY -->
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+
+{% endblock content %}
+
+<!-- 
+{% comment %}
+App Development
+Web Development
+digital-marketing
+graphics-designing
+python-programming
+artificial-intelligence
+government-exams
+{% endcomment %} -->
+
+
+
+
