@@ -9,13 +9,13 @@ from .models import User
 # Create your views here.
 
 def register_user(request):
-    return render(request, 'accounts/register.html')
+    return render(request, 'Accounts/register.html')
 
 
 class student_register(CreateView):
     model = User
     form_class = Student_SignUp_Form
-    template_name = 'accounts/student_register.html'
+    template_name = 'Accounts/student_register.html'
 
     def form_valid(self, form):
         user = form.save()
@@ -26,7 +26,7 @@ class student_register(CreateView):
 class instructor_register(CreateView):
     model = User
     form_class = Instructor_SignUp_Form
-    template_name = 'accounts/instructor_register.html'
+    template_name = 'Accounts/instructor_register.html'
 
     def form_valid(self, form):
         user = form.save()
@@ -35,7 +35,7 @@ class instructor_register(CreateView):
 
 
 # def loginUser(request):
-#     return render(request, 'accounts/login.html')
+#     return render(request, 'Accounts/login.html')
 
 
 
@@ -64,7 +64,7 @@ def login_user(request):
         else:
             messages.error(request,"Invalid username or password")
 
-    return render(request, 'accounts/login.html', context={'form':AuthenticationForm()})
+    return render(request, 'Accounts/login.html', context={'form':AuthenticationForm()})
 
 
 
