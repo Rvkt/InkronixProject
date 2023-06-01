@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'home/index.html')
+    return render(request, 'Home/index.html')
 
 
 # def contact(request):
@@ -10,12 +10,12 @@ def index(request):
 
 
 def allcategory(request):
-    return render(request, 'home/allcategory.html')
+    return render(request, 'Home/allcategory.html')
 
 
 def about(request):
-    return render(request, 'home/about.html')
+    return render(request, 'Home/about.html')
 
 
 def testing(request):
-    return render(request, 'home/testing.html')
+    return render(request, 'Home/testing.html')
