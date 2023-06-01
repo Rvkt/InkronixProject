@@ -9,6 +9,9 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=100)
 
 
+
+
+
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE, primary_key = True)
     phone_number = models.CharField(max_length=20)

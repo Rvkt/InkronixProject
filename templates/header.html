@@ -156,6 +156,10 @@
                             </li>
                             {% endif %}
 
+                            {% if request.user_is_student %}
+                                <h1>{{ request.user.first_name }}</h1>
+                            {% endif %}
+
 
 
                             <li class="with-megamenu has-menu-child-item position-static">
