@@ -1,13 +1,41 @@
 from django.shortcuts import render
+from django.views.generic import CreateView
+
+from django.shortcuts import redirect
+
+from .forms import Course_Form
+from .models import Course
+
 
 # Create your views here.
 def courses(request):
-    return render(request, 'courses/courses.html')
+
+    courses = Course.objects.all()
+
+    context = {
+        'courses': courses
+    }
+    return render(request, 'Courses/courses.html', context)
+
+
+
+
+class course_added(CreateView):
+    model = Course()
+    form_class = Course_Form
+    template_name = 'Instructor/instructor-add-course.html'
+
+    def form_valid(self, form):
+        course = form.save()
+        return redirect('courses')
+
+
+
 
 
 def courseDetails(request):
-    return render(request, 'courses/course-details.html')
+    return render(request, 'Courses/course-details.html')
 
 
 def courseList(request):
-    return render(request, 'courses/course-list.html')
+    return render(request, 'Courses/course-list.html')
