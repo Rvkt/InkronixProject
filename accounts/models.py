@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+# from courses.models import Course
+
 
 class User(AbstractUser):
     is_student = models.BooleanField(default=False)
@@ -7,9 +9,6 @@ class User(AbstractUser):
     
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-
-
-
 
 
 class Student(models.Model):
@@ -29,3 +28,6 @@ class Instructor(models.Model):
 
 
 
+# class Student_Profile(models.Model):
+#     user                = models.OneToOneField(Student, on_delete=models.CASCADE)
+#     enrolled_courses    = models.ManyToManyField(Course, verbose_name=_(""))
