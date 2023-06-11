@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Page header with logo and tagline-->
+<header class="py-5 border-bottom mb-4" style="max-height: 420px; background-color:aliceblue; border-style: hidden;">
+    <div class="container" style="max-height: 300px; background-color: rgb(218, 244, 246);">
+        <img class="card-img-top" src="{% static 'assets\images\blog\home-background.jpg' %}" style="width: 100%; height:200px;" alt="..." />
+        <div class="text-center my-4">
+            <h1 class="fw-bolder">Welcome to our Blog!</h1>
+            <p class="lead mb-1" style="color: rgb(10, 135, 177); font-size: large;">All blogs related to our courses, site updates and announcements</p>
+        </div>
+    </div>
+</header>
+
+<!-- Page content-->
+<div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
+            <!-- Featured blog posts-->
+
+            {% if blogs %}
+                {% for blog in blogs %}
+                <div class="card m-4 p-4" style="background-color:aliceblue; border-radius: 1.0rem;">
+                    <!-- <a href="/blog/{{blog.id}}"><img class="card-img-top" src="{{blog.blog_image.url}}"
+                            style="width: 100%; height: 450px;" alt="..." /></a> -->
+                    <div class="card-body">
+                        <div class="small text-muted">{{blog.blog_date_time}}</div>
+                        <h2 class="small text-muted">{{blog.writer_name.writer_name}}</h2>
+                        <h5 class="card-title">{{blog.blog_title}}</h5>
+                        <p class="card-text">{{blog.blog_text|truncatewords:20}}</p>
+                        <a class="btn" href="/blog/{{blog.id}}" style="background-color: rgb(148, 222, 227); font-size: small; border-radius: 0.8;">Read more →</a>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No blogs found.</p>
+            {% endif %}
+
+<!-- Pagination-->
+<nav aria-label="Pagination" style="padding-right: 20px;">
+    <hr class="my-0" />
+    <ul class="pagination justify-content-center my-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
+
+        {% if page_obj.has_previous %}
+        <li class="page-item active">
+            <a class="page-link" href="?query={{request.GET.query}}?page={{ page_obj.previous_page_number }}" tabindex="-1" aria-disabled="false"
+            style="background-color:aliceblue; color: rgb(10, 135, 177);">&laquo; Newer</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="?query={{request.GET.query}}?page=1" tabindex="-1" aria-disabled="true"
+            style="background-color:aliceblue; color: rgb(10, 135, 177);">&laquo; Newer</a>
+        </li>
+        {% endif %}
+
+        {% for page_number in page_obj.paginator.page_range %}
+        {% if page_number == page_obj.number and page_obj.has_next in page_obj.paginator.page_range %}
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?query={{request.GET.query}}?page={{page_obj.previous_page_number}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{page_obj.previous_page_number}}</a></li>
+        {% endif %}
+        <li class="page-item active" aria-current="page"><a class="page-link" href="?query={{request.GET.query}}?page={{page_obj.number}}">{{page_obj.number}}</a></li>
+        <li class="page-item"><a class="page-link" href="?query={{request.GET.query}}?page={{page_obj.next_page_number}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{page_obj.next_page_number}}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        <li class="page-item disabled"><a class="page-link" href="#!" style="background-color:aliceblue;">...</a></li>
+
+        {% if page_obj.has_next in page_obj.paginator.page_range %}
+        <li class="page-item"><a class="page-link" href="?query={{request.GET.query}}?page={{page_obj.paginator.num_pages}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{page_obj.paginator.num_pages}}</a></li>
+        <!-- <li class="page-item"><a class="page-link" href="?page={{blogs|length}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{blogs|length}}</a></li> -->
+        <li class="page-item"><a class="page-link" href="?query={{request.GET.query}}?page={{page_obj.next_page_number}}" tabindex="+1" aria-disabled="false" style="background-color:aliceblue; color: rgb(10, 135, 177);">Older  &raquo;</a></li>
+        {% else %}
+        <li class="page-item disabled"><a class="page-link" href="?query={{request.GET.query}}?page={{ page_obj.current }}" tabindex="+1" aria-disabled="true" style="background-color:aliceblue; color: rgb(10, 135, 177);">Older  &raquo;</a></li>
+        {% endif %}
+
+    </ul>
+</nav>
+
+{% endblock content %}

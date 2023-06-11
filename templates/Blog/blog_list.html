@@ -1,0 +1,51 @@
+
+<!-- When you name your Django template blog_list.html, both your PaginatedListView class or your function based view can find the template.  -->
+    <!-- {% for page_number in page_obj.paginator.page_range %}
+    <h1>{{page_obj.paginator.page_range}}</h1>
+        <a
+            href="paginated-blogs/?page="
+            class="{% if page_number == page_obj.number %}current{% endif %}"
+        >
+            {{page_number}}
+        </a>
+    {% endfor %} -->
+
+    <!-- Pagination-->
+    <nav aria-label="Pagination" style="padding-right: 20px;">
+        <hr class="my-0" />
+        <ul class="pagination justify-content-center my-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
+
+            {% if page_obj.has_previous %}
+            <li class="page-item active">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1" aria-disabled="false"
+                style="background-color:aliceblue; color: rgb(10, 135, 177);">&laquo; Newer</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true"
+                style="background-color:aliceblue; color: rgb(10, 135, 177);">&laquo; Newer</a>
+            </li>
+            {% endif %}
+
+            {% for page_number in page_obj.paginator.page_range %}
+            {% if page_number == page_obj.number and page_obj.has_next in page_obj.paginator.page_range %}
+            {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{page_obj.previous_page_number}}</a></li>
+            {% endif %}
+            <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{page_obj.number}}">{{page_obj.number}}</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{page_obj.next_page_number}}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            <li class="page-item disabled"><a class="page-link" href="#!" style="background-color:aliceblue;">...</a></li>
+
+            {% if page_obj.has_next in page_obj.paginator.page_range %}
+            <li class="page-item"><a class="page-link" href="?page={{page_obj.paginator.num_pages}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{page_obj.paginator.num_pages}}</a></li>
+            <!-- <li class="page-item"><a class="page-link" href="?page={{blogs|length}}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{blogs|length}}</a></li> -->
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}" tabindex="+1" aria-disabled="false" style="background-color:aliceblue; color: rgb(10, 135, 177);">Older  &raquo;</a></li>
+            {% else %}
+            <li class="page-item disabled"><a class="page-link" href="?page={{ page_obj.current }}" tabindex="+1" aria-disabled="true" style="background-color:aliceblue; color: rgb(10, 135, 177);">Older  &raquo;</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>

@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
+            <!-- {% for page_number in page_obj.paginator.page_range %}
+            {% if page_number == page_obj.number %}
+            <li class="page-item active" aria-current="page"><a class="page-link" href="?page=current">{{page_number}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}" style="background-color:aliceblue; color: rgb(10, 135, 177);">{{page_obj.next_page_number}}</a></li>
+            {% endif %} -->
 {% block content %}
 
         <!-- Responsive navbar-->
@@ -15,6 +20,12 @@
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="signup">SignUp</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -30,6 +41,26 @@
                 </div>
             </div>
         </header>
+
+        <!-- writer's blog post section -->
+        <div class="container p-4 m-4">
+
+            <form action="/" method="POST">
+            {% csrf_token %}
+
+            <div class="container">
+                <!-- {% if user.is_authenticated %} -->
+                <h1 class="display-4">{{writer_name}} {{topic}} blogs</h1>
+                <img style="height: 20px" class="rounded-circle" src="C:\Users\mishr\Documents\SMcode5\ChatBox\chat\media\-1117Wx1400H-410319310-green-MODEL.jpg" alt="Avatar">
+                <p class="lead">{{date_time}}</p>
+                <!-- {% endif %} -->
+            </div>
+
+            <input type="text" class="form-control" placeholder="Type your message here" aria-label="message" name="user_message" aria-describedby="basic-addon1">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
         <!-- Page content-->
         <div class="container">
             <div class="row">

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Page content-->
+<div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
+            <!-- Featured blog posts-->
+            <div class="card m-4 p-4" style="background-color:aliceblue">
+                <img class="card-img-top" src="{{blog.blog_image.url}}"
+                        style="width: 100%; height: 450px;" alt="..." />
+                <div class="card-body">
+                    <div class="large text-muted">{{blog.blog_date_time}}</div>
+                    <div class="large text-muted">{{blog.writer_name.writer_name}} | {{blog.blog_category}}</div>
+                    <h2 class="card-title">{{blog.blog_title}}</h2>
+                    <p class="card-text">{{blog.blog_text}}</p>
+
+                    <!--Comment Form-->
+                    <div class="container">
+                        <h2 class="my-4">Add your comment</h2>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{comment_form}}
+                            <button class="btn btn-primary my-4" type="submit" name="blog_id" value="{{blog.id}}">Submit</button>
+                        </form>
+
+                        <!-- {% for c in blog.comment %}
+                            <div class="container dark">{{c.your_comment}}</div>
+                        {% empty %}
+                            <p>No comments added.</p>
+                        {% endfor %} -->
+
+                        {% for c in comments %}
+                            <div class="dropdown-divider"></div>
+                            <div class="container darker">
+                                <div>{{c.your_comment}}</div>
+                                <div>{{c.name}}</div>
+                                <span class="time-right">{{c.created_on}} | {{blog.blog_category}}</span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                        {% empty %}
+                            <p>No comments added.</p>
+                        {% endfor %}
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Pagination-->
+            <!-- <nav aria-label="Pagination">
+                <hr class="my-0" />
+                <ul class="pagination justify-content-center my-4"
+                    style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
+                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true"
+                            style="background-color:aliceblue;">Newer</a></li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#!" style="background-color:aliceblue;">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#!" style="background-color:aliceblue;">3</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#!"
+                            style="background-color:aliceblue;">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#!" style="background-color:aliceblue;">15</a></li>
+                    <li class="page-item"><a class="page-link" href="#!" style="background-color:aliceblue;">Older</a>
+                    </li>
+                </ul>
+            </nav>
+        </div> -->
+
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            <!-- Search widget -->
+            <div class="card my-4" style="border-style: hidden;">
+                <div class="card-header p-4 mb-4" style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Search</div>
+                <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
+                    <div class="input-group">
+                        <input class="form-control" type="text" style="background-color:aliceblue; border-style: hidden;" placeholder="Enter search term..."
+                            aria-label="Enter search term..." aria-describedby="button-search" />
+                        <button class="btn" id="button-search" type="button" style="font-size: small; background-color:rgb(148, 222, 227); border-radius: 1.0;">Search!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories widget-->
+            <div class="card mb-4" style="border-style: hidden;">
+                <div class="card-header p-4 mb-4" style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Categories</div>
+                <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                {% for category in categories %}
+                                {% if category.id < 5 %}
+                                <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
+                                <!-- <li><a href="#!">HTML</a></li>
+                                <li><a href="#!">Python</a></li> -->
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                {% for category in categories %}
+                                {% if category.id >= 5 %}
+                                <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
+                                {% endif %}
+                                {% endfor %}
+                                <!-- <li><a href="#!">CSS</a></li>
+                                <li><a href="#!">Tutorials</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Side widget-->
+            <div class="card mb-4" style="border-style: hidden;">
+                <div class="card-header p-4 mb-4" style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Latest news</div>
+                <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem; color: black;">Course ads links or links of New updates about the platform</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
