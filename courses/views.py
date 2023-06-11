@@ -10,7 +10,7 @@ from .models import Course
 # Create your views here.
 def courses(request):
 
-    courses = Course.objects.all().order_by('-created_on')[:3]
+    courses = Course.objects.all().order_by('-created_on')[0:]
 
     context = {
         'courses': courses
