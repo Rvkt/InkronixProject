@@ -202,7 +202,7 @@
                     <h5>Browse top class courses by browsing our category which will be more easy for you.</h5>
                 </div>
                 <div class="col-3">
-                    <a href="{% url 'allcategory' %}"
+                    <a href="{% url 'courses' %}"
                         class="text-decoration-none btn btn-outline-primary px-5 py-4 fs-1">All
                         Categories</a>
                 </div>
@@ -319,12 +319,55 @@
                     <h5>Get the best course with the best price with world class mentors.</h5>
                 </div>
                 <div class="col-3">
-                    <a href="#" class="text-decoration-none btn btn-outline-primary px-5 py-3 fs-1">See all courses</a>
+                    <a href="{% url 'courses' %}" class="text-decoration-none btn btn-outline-primary px-5 py-3 fs-1">See all courses</a>
                 </div>
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
 
+            {% for course in courses %}
+            <!-- new cards for courses on home page start -->
+            <div class="bg-body p-3 rounded shadow">
+                <div class="rbt-card variation-01 rbt-hover">
+                  <div class="rbt-card-img">
+                    <a href={% url 'course-details' %}>
+                      <img src="{{course.image.url}}" alt="Card image">
+                      <div class="rbt-badge-3 bg-white">
+                        <span>-10%</span>
+                        <span>Off</span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="rbt-card-body">
+                    <div class="rbt-card-top">
+                      <small>{{course.category}}</small>
+                    </div>
+                    <h5 class="rbt-card-title">
+                      {{course.title | truncatechars:20 }}
+                    </h5>
+                    <p class="rbt-card-text">
+                      {{course.short_intro}}
+                    </p>
+    
+                    <div class="rbt-author-meta">
+                      <div class="rbt-author-info">
+                        By <a href="profile.html">{{course.author}}</a> In <a href="#">{{course.language}}</a>
+                      </div>
+                    </div>
+                    <div class="rbt-card-bottom">
+                      <div class="rbt-price">
+                        <span class="current-price">₹ {{course.price}}</span>
+                        <span class="off-price">100/</span>
+                      </div>
+                      <a class="btn btn-primary btn-lg" href="{% url 'course-details' %}" role="button">Enroll Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- new cards for courses on home page end -->
+            {% endfor %}
+
+            <!-- old code start 
             <div class="col d-flex justify-content-evenly">
                 <div class="card p-4" style="width: 18em;">
 
@@ -553,6 +596,7 @@
                     </div>
                 </div>
             </div>
+            -->
 
         </div>
     </div>
