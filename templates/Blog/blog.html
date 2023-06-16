@@ -6,129 +6,169 @@
 
 <!-- Page header with logo and tagline-->
 <header class="py-5 border-bottom mb-4" style="max-height: 420px; background-color:aliceblue; border-style: hidden;">
-    <div class="container" style="max-height: 300px; background-color: rgb(218, 244, 246);">
-        <img class="card-img-top" src="{% static 'assets\images\blog\home-background.jpg' %}" style="width: 100%; height:200px;" alt="..." />
-        <div class="text-center my-4">
-            <h1 class="fw-bolder">Welcome to our Blog!</h1>
-            <p class="lead mb-1" style="color: rgb(10, 135, 177); font-size: large;">All blogs related to our courses, site updates and announcements</p>
-        </div>
+  <div class="container" style="max-height: 300px; background-color: rgb(218, 244, 246);">
+    <img class="card-img-top" src="{% static 'assets\images\blog\home-background.jpg' %}"
+      style="width: 100%; height:200px;" alt="..." />
+    <div class="text-center my-4">
+      <h1 class="fw-bolder">Welcome to our Blog!</h1>
+      <p class="lead mb-1" style="color: rgb(10, 135, 177); font-size: large;">All blogs related to our courses, site
+        updates and announcements</p>
     </div>
+  </div>
 </header>
 
 <!-- Page content-->
 <div class="container">
-    <div class="row">
-        <!-- Blog entries-->
-        <div class="col-lg-8">
-            <!-- Featured blog posts-->
-            {% for blog in page_obj reversed %}
-            <div class="card m-4 p-4" style="background-color:aliceblue; border-radius: 1.0rem;">
-                <a href="/blog/{{blog.id}}"><img class="card-img-top" src="{{blog.blog_image.url}}"
-                        style="width: 100%; height: 450px;" alt="..." /></a>
-                <div class="card-body">
-                    <div class="small text-muted">{{blog.blog_date_time}}</div>
-                    <h2 class="small text-muted">{{blog.writer_name.writer_name}}</h2>
-                    <h5 class="card-title">{{blog.blog_title}}</h5>
-                    <p class="card-text">{{blog.blog_text|truncatewords:20}}</p>
-                    <a class="btn" href="/blog/{{blog.id}}" style="background-color: rgb(148, 222, 227); font-size: small; border-radius: 0.8;">Read more →</a>
-                </div>
-            </div>
-            {% empty %}
-            <p>No blogs added.</p>
-            {% endfor %}
-
-            {% include "Blog/blog_list.html" %}
-            <!-- <div class="card m-4 p-4" style="background-color:aliceblue">
-                <a href="#!"><img class="card-img-top" src="{% static 'assets\images\blog\blog-card-02.jpg' %}"
-                        style="width: 100%; height: 450px;" alt="..." /></a>
-                <div class="card-body">
-                    <div class="small text-muted">January 1, 2023</div>
-                    <h2 class="card-title">Featured Post Title</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid
-                        atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero
-                        voluptate voluptatibus possimus, veniam magni quis!</p>
-                    <a class="btn btn-primary" href="#!">Read more →</a>
-                </div>
-            </div>
-            <div class="card m-4 p-4" style="background-color:aliceblue">
-                <a href="#!"><img class="card-img-top" src="{% static 'assets\images\blog\blog-card-03.jpg' %}"
-                        style="width: 100%; height: 450px;" alt="..." /></a>
-                <div class="card-body">
-                    <div class="small text-muted">January 1, 2023</div>
-                    <h2 class="card-title">Featured Post Title</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid
-                        atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero
-                        voluptate voluptatibus possimus, veniam magni quis!</p>
-                    <a class="btn btn-primary" href="#!">Read more →</a>
-                </div>
-            </div>
-            <div class="card m-4 p-4" style="background-color:aliceblue">
-                <a href="#!"><img class="card-img-top" src="{% static 'assets\images\blog\blog-card-04.jpg' %}"
-                        style="width: 100%; height: 450px;" alt="..." /></a>
-                <div class="card-body">
-                    <div class="small text-muted">January 1, 2023</div>
-                    <h2 class="card-title">Featured Post Title</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid
-                        atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero
-                        voluptate voluptatibus possimus, veniam magni quis!</p>
-                    <a class="btn btn-primary" href="#!">Read more →</a>
-                </div>
-            </div> -->
-
+  <div class="row">
+    <!-- Blog entries-->
+    <div class="col-lg-8">
+      <!-- Featured blog posts-->
+      {% for blog in blogs reversed %}
+      <div class="card m-4 p-4" style="background-color:aliceblue; border-radius: 1.0rem;">
+        <a href="/blog/{{blog.id}}"><img class="card-img-top" src="{{blog.blog_image.url}}"
+            style="width: 100%; height: 450px;" alt="..." /></a>
+        <div class="card-body">
+          <div class="small text-muted">{{blog.blog_date_time}}</div>
+          <h2 class="small text-muted">{{blog.writer_name.writer_name}}</h2>
+          <h5 class="card-title">{{blog.blog_title}} | {{blog.blog_category}}</h5>
+          <p class="card-text">{{blog.blog_text|truncatewords:20}}</p>
+          <a class="btn" href="/blog/{{blog.id}}"
+            style="background-color: rgb(148, 222, 227); font-size: small; border-radius: 0.8;">Read more →</a>
         </div>
-        <!-- Side widgets-->
-        <div class="col-lg-4">
-            <!-- Search widget-->
-            <div class="card my-4" style="border-style: hidden;">
-                <div class="card-header p-4 mb-4" style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Search</div>
-                <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
-                    <form action="search-view/" method="GET">
-                        <div class="input-group">
-                            <input class="form-cont rol" type="text" name="query" style="background-color:aliceblue; border-style: hidden;" placeholder="Enter search term..."
-                                aria-label="Enter search term..." aria-describedby="button-search" />
-                            <!-- adding submit type button to search other than using enter key -->
-                        </div>
-                        <button class="btn px-5" id="button-search" type="submit" style="font-size: small; background-color:rgb(148, 222, 227); border-radius: 1.0;">Search!</button>
-                    </form>
-                </div>
-            </div>
-            <!-- Categories widget-->
-            <div class="card mb-4" style="border-style: hidden;">
-                <div class="card-header p-4 mb-4" style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Categories</div>
-                <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                {% for category in categories %}
-                                {% if category.id < 5 %}
-                                <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
-                                <!-- <li><a href="#!">HTML</a></li>
-                                <li><a href="#!">Python</a></li> -->
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                {% for category in categories %}
-                                {% if category.id >= 5 %}
-                                <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
-                                {% endif %}
-                                {% endfor %}
-                                <!-- <li><a href="#!">CSS</a></li>
-                                <li><a href="#!">Tutorials</a></li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Side widget-->
-            <div class="card mb-4" style="border-style: hidden;">
-                <div class="card-header p-4 mb-4" style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Latest news</div>
-                <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem; color: black;">Course ads links or links of New updates about the platform</div>
-            </div>
-        </div>
+      </div>
+      {% empty %}
+      <p>No blogs added.</p>
+      {% endfor %}
+
+
+    <!-- PAGINATION -->
+    <!-- only show page numbers when there is blogs to paginate -->
+
+    {% if blogs.has_other_pages %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        
+
+        {% if blogs.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{blogs.previous_page_number}}" data-page='{{blogs.previous_page_number}}'>Previous</a>
+        </li>
+        {% endif %}
+
+
+        {% for page in paginator.page_range %}
+        {% if page == blogs.number %}
+        <li class="page-item active"><a class="page-link" href="?page={{page}}" data-page="{{page}}">{{page}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{page}}" data-page="{{page}}">{{page}}</a></li>
+        {% endif %} 
+        {% endfor %}
+
+        {% if blogs.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{blogs.next_page_number}}" data-page='{{blogs.next_page_number}}'>Next</a>
+        </li>
+        {% endif %}
+      </ul>
+
+    </nav>
+    {% endif %}
+
+    <!-- PAGINATION -->
     </div>
+
+
+
+    <!-- Side widgets-->
+    <div class="col-lg-4">
+      <!-- Search widget-->
+      <div class="card my-4" style="border-style: hidden;">
+        <div class="card-header p-4 mb-4"
+          style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Search</div>
+        <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
+          <form id="searchForm" action="{% url 'blog' %}" method="GET">
+            <div class="input-group">
+              <input class="form-cont rol" type="text" name="search_query"
+                style="background-color:aliceblue; border-style: hidden;" value="{{search_query}}" placeholder="Enter search term..."
+                aria-label="Enter search term..." aria-describedby="button-search" />
+              <!-- adding submit type button to search other than using enter key -->
+            </div>
+            <button class="btn px-5" id="button-search" type="submit"
+              style="font-size: small; background-color:rgb(148, 222, 227); border-radius: 1.0;">Search!</button>
+          </form>
+        </div>
+      </div>
+      <!-- Categories widget-->
+      <div class="card mb-4" style="border-style: hidden;">
+        <div class="card-header p-4 mb-4"
+          style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Categories</div>
+        <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
+          <div class="row">
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                {% for category in categories %}
+                {% if category.id < 5 %} <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
+                  <!-- <li><a href="#!">HTML</a></li>
+                                <li><a href="#!">Python</a></li> -->
+                  {% endif %}
+                  {% endfor %}
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                {% for category in categories %}
+                {% if category.id >= 5 %}
+                <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
+                {% endif %}
+                {% endfor %}
+                <!-- <li><a href="#!">CSS</a></li>
+                                <li><a href="#!">Tutorials</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Side widget-->
+      <div class="card mb-4" style="border-style: hidden;">
+        <div class="card-header p-4 mb-4"
+          style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Latest news</div>
+        <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem; color: black;">
+          Course ads links or links of New updates about the platform</div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<script type="text/javascript">
+    // GET SEARCH FORM AND PAGE LINKS 
+    let searchForm = document.getElementById('searchForm')
+    let pageLinks = document.getElementsByClassName('page-link')
+
+    // ENSURE SEARCH FORM EXISTS
+    if (searchForm){
+        for(let i=0; pageLinks.length > i; i++){
+            pageLinks[i].addEventListener('click', function (e) {
+                e.preventDefault()
+
+                // GET THE DATE ATTRIBUTE
+                let page = this.dataset.page
+                console.log('PAGE:' ,page)
+
+                // console.log(pageLinks[i].text, 'Button Clicked')
+                console.log('?search_query=',searchForm.text,'&page=',page)
+
+                // ADD HIDDEN SEARCH INPUT TO FORM
+                searchForm.innerHTML += `<input value = ${page} name = "page" hidden />`
+
+                // SUBMIT THE FORM
+                searchForm.submit()
+                
+                
+            })
+        }
+    }
+</script>
+
+
 {% endblock content %}
+

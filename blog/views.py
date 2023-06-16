@@ -1,5 +1,4 @@
 # import copy
-
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
@@ -11,7 +10,7 @@ from django.contrib import messages
 from django.views.generic.base import View
 from django.views.generic import ListView
 from django.db.models import Q
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from blog.models import Blog, Writer, Comment, Category
 from blog.serializers import BlogSerializer, WriterSerializer
@@ -21,25 +20,51 @@ from blog.forms import CommentForm, BlogForm
 
 def bloghome(request):
 
+    # Ravi Kant
+    search_query = ''
+
+    if request.GET.get('search_query'):
+        search_query = request.GET.get('search_query')
+
+    print('SEARCH: ',search_query)
+
+
     if request.method == 'GET':
-        blogs = Blog.objects.all()
+        blogs = Blog.objects.filter(Q(blog_title__icontains=search_query) | Q(blog_text__icontains=search_query)).order_by('blog_date_time')
+        # blogs = Blog.objects.all()
         categories = Category.objects.all()
-        category_id = request.GET.get('category')
-
-        if category_id:
-            blogs = Blog.get_blogs_by_category_id(category_id=category_id).order_by('blog_date_time')
-        else:
-            blogs = Blog.objects.all().order_by('blog_date_time')
-
-        paginator = Paginator(blogs, per_page=2)  # Show 1 contact per page.
-        page_number = request.GET.get("page", 1)
-        page_obj = paginator.get_page(page_number)
-        # if category_id:
-        #     page_obj = page_obj.object_list.filter(category_id=category_id)
+        # if category_id := request.GET.get('category'):
+        #     blogs = Blog.get_blogs_by_category_id(category_id=category_id).order_by('blog_date_time')
         # else:
-        #     page_obj = page_obj
+        #     blogs = Blog.objects.all().order_by('blog_date_time')
 
-    return render(request, 'blog/blog.html', {'page_obj':page_obj, 'categories':categories})
+
+        page = request.GET.get('page')
+        results = 2
+        paginator = Paginator(blogs, results)
+
+
+        try:
+            blogs = paginator.page(page)
+        except PageNotAnInteger:
+            page = 1
+            blogs = paginator.page(page)
+        except EmptyPage:
+            page = paginator.num_pages
+            blogs = paginator.page(page)
+
+
+
+        # paginator = Paginator(blogs, per_page=2)  # Show 1 contact per page.
+        # page_number = request.GET.get("page", 1)
+        # page_obj = paginator.get_page(page_number)
+            # if category_id:
+            #     page_obj = page_obj.object_list.filter(category_id=category_id)
+            # else:
+            #     page_obj = page_obj
+
+    return render(request, 'blog/blog.html', {'blogs':blogs, 'categories':categories, 'search_query': search_query, 'paginator': paginator})
+    # return render(request, 'blog/blog.html', {'page_obj':page_obj, 'categories':categories, 'search_query': search_query})
     # return render(request, 'blog/blog.html', {'blogs':blogs, 'categories':categories})
 
 # class BlogFormView(View):
@@ -138,22 +163,22 @@ class BlogView(View):
 #             return queryset.none()
 
 
-class BlogSearchView(ListView):
-    model = Blog
-    template_name = 'blog/search-view.html'
-    context_object_name = 'blogs'
-    paginate_by = 2
+# class BlogSearchView(ListView):
+#     model = Blog
+#     template_name = 'blog/search-view.html'
+#     context_object_name = 'blogs'
+#     paginate_by = 2
 
-    def get_queryset(self):
-        query = self.request.GET.get('query')
-        if query:
-            queryset = Blog.objects.filter(
-                Q(blog_title__icontains=query) |
-                Q(blog_text__icontains=query)
-            ).distinct()
-            return queryset
-        else:
-            return Blog.objects.none()
+#     def get_queryset(self):
+#         query = self.request.GET.get('query')
+#         if query:
+#             queryset = Blog.objects.filter(
+#                 Q(blog_title__icontains=query) |
+#                 Q(blog_text__icontains=query)
+#             ).distinct()
+#             return queryset
+#         else:
+#             return Blog.objects.none()
 
 
 # class PaginatedListView(ListView):
@@ -183,6 +208,7 @@ class BlogSearchView(ListView):
 
 #         return user
 
+
 class BlogAV(APIView):
 
     def get(self, request):
@@ -199,6 +225,7 @@ class BlogAV(APIView):
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class BlogDetailAV(APIView):
 
