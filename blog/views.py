@@ -27,11 +27,15 @@ def bloghome(request):
         search_query = request.GET.get('search_query')
 
     print('SEARCH: ',search_query)
+    search_query_category = Category.objects.filter(topic__icontains=search_query)
 
 
     if request.method == 'GET':
-        blogs = Blog.objects.filter(Q(blog_title__icontains=search_query) | Q(blog_text__icontains=search_query)).order_by('blog_date_time')
-        # blogs = Blog.objects.all()
+        blogs = Blog.objects.filter(Q(blog_title__icontains=search_query) | Q(blog_text__icontains=search_query) | Q(blog_category__in = search_query_category) ).order_by('-blog_date_time')
+        # # blogs = Blog.objects.all()
+
+        
+
         categories = Category.objects.all()
         # if category_id := request.GET.get('category'):
         #     blogs = Blog.get_blogs_by_category_id(category_id=category_id).order_by('blog_date_time')

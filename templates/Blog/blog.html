@@ -88,7 +88,7 @@
         <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
           <form id="searchForm" action="{% url 'blog' %}" method="GET">
             <div class="input-group">
-              <input class="form-cont rol" type="text" name="search_query"
+              <input class="form-control" type="text" name="search_query"
                 style="background-color:aliceblue; border-style: hidden;" value="{{search_query}}" placeholder="Enter search term..."
                 aria-label="Enter search term..." aria-describedby="button-search" />
               <!-- adding submit type button to search other than using enter key -->
@@ -104,27 +104,22 @@
           style="background-color:aliceblue; border-radius: 0.8rem; color: rgb(10, 135, 177);">Categories</div>
         <div class="card-body p-4" style="background-color: rgb(218, 244, 246); border-radius: 1.0rem;">
           <div class="row">
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                {% for category in categories %}
-                {% if category.id < 5 %} <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
-                  <!-- <li><a href="#!">HTML</a></li>
-                                <li><a href="#!">Python</a></li> -->
-                  {% endif %}
-                  {% endfor %}
-              </ul>
-            </div>
-            <div class="col-sm-6">
+            <ul class="list-unstyled mb-0">
+              {% for category in categories %}
+              <li><a href="?search_query={{category.topic}}"><h6>{{category.topic}}</h6></a></li>
+              {% endfor %}
+            </ul>
+
+            <!-- <div class="col-sm-6">
               <ul class="list-unstyled mb-0">
                 {% for category in categories %}
                 {% if category.id >= 5 %}
                 <li><a href="?category={{category.id}}">{{category.topic}}</a></li>
                 {% endif %}
                 {% endfor %}
-                <!-- <li><a href="#!">CSS</a></li>
-                                <li><a href="#!">Tutorials</a></li> -->
               </ul>
-            </div>
+            </div> -->
+
           </div>
         </div>
       </div>
