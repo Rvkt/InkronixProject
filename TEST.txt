@@ -1,0 +1,58 @@
+App & Web Development 101 for Beginner
+Digital Marketing       101 for Beginner
+Graphics Designing      101 for Beginner
+Python Programming      101 for Beginner
+Artificial Intelligence 101 for Beginner
+Government Exams        101 for SSC
+
+
+App & Web Development   201 for Intermediate
+Digital Marketing       201 for Intermediate
+Graphics Designing      201 for Intermediate
+Python Programming      201 for Intermediate
+Artificial Intelligence 201 for Intermediate
+Government Exams        201 for Bank
+
+
+App & Web Development   301 for Expert
+Digital Marketing       301 for Expert
+Graphics Designing      301 for Expert
+Python Programming      301 for Expert
+Artificial Intelligence 301 for Expert
+Government Exams        301 for SSC & Bank
+
+
+App & Web Development   401 Mastery
+Digital Marketing       401 Mastery
+Graphics Designing      401 Mastery
+Python Programming      401 Mastery
+Artificial Intelligence 401 Mastery
+Government Exams        401 Test Series
+
+
+App & Web Development   501 Essentials
+Digital Marketing       501 Essentials
+Graphics Designing      501 Essentials
+Python Programming      501 Essentials
+Artificial Intelligence 501 Essentials
+Government Exams        501 Mastery
+
+
+
+
+
+app-web-development          
+digital-marketing           
+graphics-designing         
+python-programming          
+artificial-intelligence          
+government-exams            
+
+
+instructor
+instructor_add_course
+instructor_profile
+instructor_reviews
+instructor_courses
+instructor_announcements
+instructor_settings
