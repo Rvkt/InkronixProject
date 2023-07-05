@@ -639,3 +639,5 @@ FodyWeavers.xsd
 HISTORY.txt
 README.txt
 TEST.txt
+*.zip
+.gitignore
